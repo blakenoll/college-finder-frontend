@@ -11,5 +11,5 @@ export const StateProvider = ({ reducer, initialState, children }) => (
 );
 
 // custom hook to get current global state.
-// returns value prop from StateProvider
+// returns value prop from StateContext.Provider
 export const useStateValue = () => useContext(StateContext);

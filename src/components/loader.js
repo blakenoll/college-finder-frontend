@@ -21,7 +21,6 @@ const StyledLoader = styled(Loader)`
     transform: translateZ(0);
     animation-delay: -0.16s;
   }
-
   &:before,
   &:after {
     position: absolute;
