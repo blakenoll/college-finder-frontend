@@ -49,7 +49,9 @@ const Results = ({ distance, zipcode }) => {
   if (queryResults.findWithinDistance) {
     return (
       <div>
-        <p>{queryResults.findWithinDistance.length} results</p>
+        <p style={{ fontSize: "1.2rem" }}>
+          {queryResults.findWithinDistance.length} results
+        </p>
         {trail.map((props, index) => (
           <animated.div
             key={queryResults.findWithinDistance[index].scid}

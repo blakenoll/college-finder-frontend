@@ -25,9 +25,9 @@ const Form = ({ className }) => {
 
   return (
     <div className={className}>
-      <h1>College Finder</h1>
+      <h1>Search</h1>
       <form onSubmit={handleSubmit}>
-        <label>Zipcode:</label>
+        <label>Address:</label>
         <input
           type="text"
           onChange={e =>
@@ -54,9 +54,46 @@ const Form = ({ className }) => {
 const StyledName = styled(Form)`
   color: #0c2340;
   font-size: 1rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 10px;
   input {
     display: block;
     margin: 5px 0;
+    max-width: 500px;
+    width: 500px;
+    padding: 10px 5px;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    border: 1px solid #3a416f;
+    box-shadow: 0 7px 13px -3px rgba(45, 35, 66, 0.3),
+      0 2px 4px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 #3a416f;
+  }
+  input[type="submit"] {
+    padding: 10px 20px;
+    background: linear-gradient(to top right, #267871, #136a8a);
+    color: #eee;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 30px;
+    display: block;
+    margin: 5px 0;
+    width: auto;
+    box-shadow: 0 7px 13px -3px rgba(45, 35, 66, 0.3),
+      0 2px 4px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 teal;
+  }
+  select {
+    font-size: 1.1rem;
+    padding: 10px 5px;
+    margin: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid #3a416f;
+    box-shadow: 0 7px 13px -3px rgba(45, 35, 66, 0.3),
+      0 2px 4px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 #3a416f;
+  }
+  label {
+    font-size: 1.3rem;
   }
 `;
 

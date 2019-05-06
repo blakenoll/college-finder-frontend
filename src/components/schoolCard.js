@@ -5,8 +5,12 @@ import Info from "./schoolInfo";
 import SchoolLink from "./schoolLink";
 
 const SchoolCard = ({ school, className }) => (
-  <div key={school.scid} className={className}>
-    <Link to={`/school/${school.scid}`}>
+  <StyledSchoolCard
+    to={`/school/${school.scid}`}
+    key={school.scid}
+    className={className}
+  >
+    <div>
       <div className="school">
         <span>{school.name}</span>
       </div>
@@ -27,17 +31,19 @@ const SchoolCard = ({ school, className }) => (
         />
         <Info title="Address" data={school.address} />
       </div>
-    </Link>
-  </div>
+    </div>
+  </StyledSchoolCard>
 );
 
-const StyledSchoolCard = styled(SchoolCard)`
-  margin: 20px 10px;
+const StyledSchoolCard = styled(Link)`
+  margin: 20px 0;
   padding: 5px;
   max-width: 500px;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 3px;
+  color: #000;
+  display: block;
   .school {
     font-size: 16px;
     font-weight: bold;
@@ -67,4 +73,4 @@ const StyledSchoolCard = styled(SchoolCard)`
   }
 `;
 
-export default StyledSchoolCard;
+export default SchoolCard;

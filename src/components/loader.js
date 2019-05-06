@@ -7,13 +7,13 @@ const StyledLoader = styled(Loader)`
   &,
   &:before,
   &:after {
-    background: dodgerblue;
+    background: var(--purple);
     animation: load1 1s infinite ease-in-out;
     width: 1em;
     height: 4em;
   }
   & {
-    color: dodgerblue;
+    color: var(--purple);
     text-indent: -9999em;
     margin: 88px auto;
     position: relative;

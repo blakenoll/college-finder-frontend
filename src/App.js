@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "./components/navbar";
 import Form from "./components/form";
 import SchoolPage from "./components/schoolPage";
 import { GlobalStyle } from "./components/globalStyle";
@@ -43,6 +44,7 @@ const App = () => {
   return (
     <ApolloProvider client={client}>
       <GlobalStyle />
+      <Navbar />
       <StateProvider initialState={initialState} reducer={reducer}>
         <Router>
           <Route path="/" exact component={Form} />
