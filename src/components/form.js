@@ -61,13 +61,14 @@ const StyledName = styled(Form)`
     display: block;
     margin: 5px 0;
     max-width: 500px;
-    width: 500px;
+    width: 100%;
     padding: 10px 5px;
     font-size: 1.1rem;
     border-radius: 6px;
     border: 1px solid #3a416f;
     box-shadow: 0 7px 13px -3px rgba(45, 35, 66, 0.3),
       0 2px 4px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 #3a416f;
+    -webkit-appearance: none;
   }
   input[type="submit"] {
     padding: 10px 20px;
@@ -82,6 +83,7 @@ const StyledName = styled(Form)`
     width: auto;
     box-shadow: 0 7px 13px -3px rgba(45, 35, 66, 0.3),
       0 2px 4px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 teal;
+    -webkit-appearance: none;
   }
   select {
     font-size: 1.1rem;
