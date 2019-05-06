@@ -3,6 +3,9 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
   :root {
     --purple: #3a416f;
+    --box-shadow: 0 7px 13px -3px rgba(45, 35, 66, 0.3),
+      0 2px 4px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 #3a416f;
+    --border: 1px solid var(--purple);
   }
 
   * {

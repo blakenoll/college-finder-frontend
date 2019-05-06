@@ -37,11 +37,11 @@ const SchoolCard = ({ school, className }) => (
 
 const StyledSchoolCard = styled(Link)`
   margin: 20px 0;
-  padding: 5px;
+  padding: 10px;
   max-width: 500px;
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+  border-radius: 6px;
   color: #000;
   display: block;
   .school {
