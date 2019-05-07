@@ -73,15 +73,14 @@ const StyledName = styled(Form)`
     padding: 10px 20px;
     background: linear-gradient(to top right, #267871, #136a8a);
     color: #eee;
-    border: none;
+    border: var(--border);
     text-transform: uppercase;
     font-weight: bold;
     border-radius: 30px;
     display: block;
     margin: 5px 0;
     width: auto;
-    box-shadow: 0 7px 13px -3px rgba(45, 35, 66, 0.3),
-      0 2px 4px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 teal;
+    box-shadow: var(--box-shadow);
     -webkit-appearance: none;
   }
   select {

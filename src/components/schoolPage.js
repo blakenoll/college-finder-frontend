@@ -4,6 +4,7 @@ import { Query } from "react-apollo";
 import { Link } from "react-router-dom";
 import { useSpring, animated, config } from "react-spring";
 import Info from "./schoolInfo";
+import Image from "./image";
 import gql from "graphql-tag";
 import Loader from "./loader";
 
@@ -54,6 +55,14 @@ const SchoolPage = ({ match, className }) => {
         const school = data.getSchoolByID;
         return (
           <AnimatedDiv style={props}>
+            <Image
+              src="https://source.unsplash.com/random"
+              alt="header"
+              width="100vw"
+              height="300px"
+              margin="0 calc(-50vw + 50%)"
+              objectFit="cover"
+            />
             <BackButton to="/">Back</BackButton>
             <h1>{school.name}</h1>
             <p>{school.blurb}</p>
@@ -81,14 +90,18 @@ const BackButton = styled(Link)`
   font-weight: bold;
   border-radius: 30px;
   display: inline-block;
-  margin: 5px;
   width: auto;
+  position: absolute;
+  top: 10px;
   box-shadow: 0 7px 13px -3px rgba(45, 35, 66, 0.3),
     0 2px 4px 0 rgba(45, 35, 66, 0.4), inset 0 -2px 0 0 teal;
 `;
 
 const AnimatedDiv = styled(animated.div)`
   font-size: 1rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 5px;
   h1 {
     color: #3a416f;
     font-size: 1.8rem;
