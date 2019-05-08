@@ -27,15 +27,16 @@ const Form = ({ className }) => {
     <div className={className}>
       <h1>Search</h1>
       <form onSubmit={handleSubmit}>
-        <label>Address:</label>
+        <label for="zipcode">Address:</label>
         <input
           type="text"
           onChange={e =>
             dispatch({ type: "changeZip", newZipcode: e.target.value })
           }
           value={zipcode}
+          name="zipcode"
         />
-        <label>Distance:</label>
+        <label for="distance">Distance:</label>
         <Select
           name="size"
           onChange={e =>
@@ -43,6 +44,7 @@ const Form = ({ className }) => {
           }
           options={distances}
           value={distance}
+          name="distance"
         />
         <input type="submit" value="Submit" />
       </form>

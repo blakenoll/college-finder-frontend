@@ -17,7 +17,7 @@ const InfoData = ({ title, data, className }) => {
 const StyledInfo = styled(InfoData)`
   margin-bottom: 3px;
   span:nth-child(2) {
-    color: gray;
+    color: var(--purple);
     font-weight: 200;
   }
 `;
