@@ -34,7 +34,7 @@ const Form = ({ className }) => {
             dispatch({ type: "changeZip", newZipcode: e.target.value })
           }
           value={zipcode}
-          name="zipcode"
+          id="zipcode"
         />
         <label for="distance">Distance:</label>
         <Select
@@ -44,7 +44,7 @@ const Form = ({ className }) => {
           }
           options={distances}
           value={distance}
-          name="distance"
+          id="distance"
         />
         <input type="submit" value="Submit" />
       </form>
