@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./components/navbar";
-import Form from "./components/form";
+import HomePage from "./components/home";
+import Results from "./components/showResults";
 import SchoolPage from "./components/schoolPage";
 import { GlobalStyle } from "./components/globalStyle";
 import ApolloClient from "apollo-boost";
@@ -44,10 +45,11 @@ const App = () => {
   return (
     <ApolloProvider client={client}>
       <GlobalStyle />
-      <Navbar />
       <StateProvider initialState={initialState} reducer={reducer}>
         <Router>
-          <Route path="/" exact component={Form} />
+          <Navbar />
+          <Route path="/" exact component={HomePage} />
+          <Route path="/search" exact component={Results} />
           <Route path="/school/:id" component={SchoolPage} />
         </Router>
       </StateProvider>

@@ -2,6 +2,7 @@ import React from "react";
 import { Query } from "react-apollo";
 import { useTrail, animated, config } from "react-spring";
 import gql from "graphql-tag";
+import { Container } from "./stylecComponents";
 import { useStateValue } from "./state";
 import SchoolCard from "./schoolCard";
 import Loader from "./loader";
@@ -33,12 +34,12 @@ const getData = gql`
   }
 `;
 
-const Results = ({ distance, zipcode }) => {
-  const [{ queryResults }, dispatch] = useStateValue();
-  const length = queryResults.findWithinDistance
+const Results = () => {
+  const [{ queryResults, zipcode, distance }, dispatch] = useStateValue();
+  const results = queryResults.findWithinDistance
     ? queryResults.findWithinDistance.length
     : 0;
-  const trail = useTrail(length, {
+  const trail = useTrail(results, {
     config: config.default,
     opacity: 1,
     transform: "scale(1)",
@@ -48,7 +49,7 @@ const Results = ({ distance, zipcode }) => {
   // if global state contains results dont fetch new data
   if (queryResults.findWithinDistance) {
     return (
-      <div>
+      <Container>
         <p style={{ fontSize: "1.2rem" }}>
           {queryResults.findWithinDistance.length} results
         </p>
@@ -60,7 +61,7 @@ const Results = ({ distance, zipcode }) => {
             <SchoolCard school={queryResults.findWithinDistance[index]} />
           </animated.div>
         ))}
-      </div>
+      </Container>
     );
   } else {
     return (

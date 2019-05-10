@@ -72,7 +72,7 @@ const SchoolPage = ({ match, className }) => {
               margin="0 calc(-50vw + 50%)"
               objectFit="cover"
             />
-            <BackButton to="/">Back</BackButton>
+            <BackButton to="/search">Back</BackButton>
             <h1>{school.name}</h1>
             <p>{school.blurb}</p>
             <h2>General Info</h2>

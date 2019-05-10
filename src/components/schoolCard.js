@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Info from "./schoolInfo";
-import SchoolLink from "./schoolLink";
 
 const SchoolCard = ({ school, className }) => (
   <StyledSchoolCard
@@ -21,9 +20,6 @@ const SchoolCard = ({ school, className }) => (
       <p>{school.blurb}</p>
       <div className="info">
         <span className="header">Info:</span>
-        <div className="links">
-          <SchoolLink title="website" link={school.www_url} />
-        </div>
         <Info title="Total Enrolled" data={school.generalInfo.campus_enroll} />
         <Info
           title="Average freshmen GPA"

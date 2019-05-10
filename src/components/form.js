@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Select from "./select";
 import { useStateValue } from "./state";
 import styled from "styled-components";
-import Results from "./showResults";
+import { withRouter } from "react-router";
 
-const Form = ({ className }) => {
-  const [submitted, setSubmitted] = useState(false);
-  const [{ zipcode, distance, queryResults }, dispatch] = useStateValue();
+const Form = ({ className, history }) => {
+  const [{ zipcode, distance }, dispatch] = useStateValue();
 
   const distances = [10, 20, 30, 50, 100];
 
@@ -14,29 +13,22 @@ const Form = ({ className }) => {
     event.preventDefault();
     // clear query results if new search is made
     dispatch({ type: "changeQuery", newQueryResults: {} });
-    setSubmitted(true);
+    history.push("/search");
   }
-
-  useEffect(() => {
-    if (queryResults.findWithinDistance) {
-      setSubmitted(true);
-    }
-  }, []); // show results if global state contains results on mount
 
   return (
     <div className={className}>
-      <h1>Search</h1>
       <form onSubmit={handleSubmit}>
-        <label for="zipcode">Address:</label>
         <input
           type="text"
           onChange={e =>
             dispatch({ type: "changeZip", newZipcode: e.target.value })
           }
           value={zipcode}
+          placeholder="Address or Zipcode"
           id="zipcode"
         />
-        <label for="distance">Distance:</label>
+        <label htmlFor="distance">Distance:</label>
         <Select
           name="size"
           onChange={e =>
@@ -48,23 +40,21 @@ const Form = ({ className }) => {
         />
         <input type="submit" value="Submit" />
       </form>
-      {submitted && <Results distance={distance} zipcode={zipcode} />}
     </div>
   );
 };
 
-const StyledName = styled(Form)`
-  color: #0c2340;
+const StyledName = styled(withRouter(Form))`
+  color: #eee;
   font-size: 1rem;
   margin: 0 auto;
   max-width: 1200px;
   padding: 0 10px;
   input {
-    display: block;
+    display: inline;
     margin: 5px 0;
     max-width: 500px;
-    width: 100%;
-    padding: 10px 5px;
+    padding: 10px 10px;
     font-size: 1.1rem;
     border-radius: 6px;
     border: var(--border);
@@ -73,13 +63,13 @@ const StyledName = styled(Form)`
   }
   input[type="submit"] {
     padding: 10px 20px;
-    background: linear-gradient(to top right, #267871, #136a8a);
+    background: var(--purple);
     color: #eee;
     border: var(--border);
     text-transform: uppercase;
     font-weight: bold;
     border-radius: 30px;
-    display: block;
+    display: inline;
     margin: 5px 0;
     width: auto;
     box-shadow: var(--box-shadow);
@@ -95,6 +85,7 @@ const StyledName = styled(Form)`
   }
   label {
     font-size: 1.3rem;
+    margin-left: 5px;
   }
 `;
 
