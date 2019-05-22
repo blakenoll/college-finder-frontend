@@ -5,7 +5,7 @@ class Auth {
     this.auth0 = new auth0.WebAuth({
       domain: "blakenoll.auth0.com",
       clientID: "T7n59xA9006Djz4YpjL0xBVT5ywWWKVB",
-      redirectUri: "http://college-finder.netlify.com/callback",
+      redirectUri: "https://college-finder.netlify.com/callback",
       audience: "https://blakenoll.auth0.com/userinfo",
       responseType: "token id_token",
       scope: "openid email"
