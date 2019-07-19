@@ -26,38 +26,10 @@ const client = new ApolloClient({
 });
 
 const App = () => {
-  const initialState = {
-    zipcode: "",
-    distance: "10",
-    submitted: false,
-    queryResults: {}
-  };
-
-  const reducer = (state, action) => {
-    switch (action.type) {
-      case "changeZip":
-        return {
-          ...state,
-          zipcode: action.newZipcode
-        };
-      case "changeDistance":
-        return {
-          ...state,
-          distance: action.newDistance
-        };
-      case "changeQuery":
-        return {
-          ...state,
-          queryResults: action.newQueryResults
-        };
-      default:
-        return state;
-    }
-  };
   return (
     <ApolloProvider client={client}>
       <GlobalStyle />
-      <StateProvider initialState={initialState} reducer={reducer}>
+      <StateProvider>
         <Router>
           <Navbar />
           <Route path="/" exact component={HomePage} />
