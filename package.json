@@ -7,7 +7,7 @@
     "auth0-js": "^9.10.2",
     "graphql": "^14.2.1",
     "react": "^16.8.6",
-    "react-apollo": "^2.5.4",
+    "react-apollo": "^3.1.5",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
