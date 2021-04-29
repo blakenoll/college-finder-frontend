@@ -1,0 +1,41 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "13:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: react-spring
+    versions:
+    - 8.0.27
+    - 9.0.0
+    - 9.1.0
+    - 9.1.1
+  - dependency-name: react
+    versions:
+    - 16.14.0
+    - 17.0.1
+  - dependency-name: react-scripts
+    versions:
+    - 4.0.1
+    - 4.0.2
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
+  - dependency-name: graphql
+    versions:
+    - 14.7.0
+  - dependency-name: handlebars
+    versions:
+    - 4.7.6
+  - dependency-name: react-dom
+    versions:
+    - 16.13.0
+  - dependency-name: styled-components
+    versions:
+    - 4.4.1
+  - dependency-name: react-apollo
+    versions:
+    - 3.1.1
